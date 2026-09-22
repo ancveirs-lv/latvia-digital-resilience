@@ -56,6 +56,12 @@ plugins:
             Evidence register: Pierādījumu reģistrs
             Methodology: Metodoloģija
             Roadmap: Attīstības plāns
+            ICT lifecycle traceability: IKT dzīves cikla izsekojamība
+            CVD authorization framework: CVD pilnvarojuma ietvars
+            Defensible vulnerability prioritisation: Aizstāvama ievainojamību prioritizācija
+            Degraded operations and recovery: Degradēta darbība un atjaunošana
+            Ten-lens skeptical review: Desmit skeptisko skatpunktu audits
+            Compliance and authority boundaries: Atbilstības un pilnvarojuma robežas
 
 markdown_extensions:
   - admonition
@@ -77,6 +83,14 @@ nav:
   - Institutional accountability: institutional-accountability.md
   - Evidence register: evidence-register.md
   - Methodology: methodology.md
+  - Deep dives:
+      - ICT lifecycle traceability: ict-lifecycle-traceability.md
+      - CVD authorization framework: cvd-authorization-framework.md
+      - Defensible vulnerability prioritisation: vulnerability-prioritisation.md
+      - Degraded operations and recovery: degraded-operations.md
+  - Assurance:
+      - Ten-lens skeptical review: skeptical-review.md
+      - Compliance and authority boundaries: compliance-boundaries.md
   - Roadmap: roadmap.md
 
 strict: true

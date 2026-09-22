@@ -1,0 +1,50 @@
+schema_version: 1
+proposals:
+  - id: ict_lifecycle_traceability
+    area: ict_governance
+    status: pilot_ready
+    normative_status: project_proposal
+    title_en: Public-sector ICT lifecycle traceability
+    title_lv: Publiskā sektora IKT dzīves cikla izsekojamība
+    claim_ids: [ict_existing_virsis_capability, ict_activity_coordination_in_virsis, ict_reuse_before_duplication, ict_lifecycle_metadata_boundary]
+    control_ids: [ict_ctl_01, ict_ctl_02, ict_ctl_03, ict_ctl_04]
+    pilot_id: pilot_ict_traceability
+    review_lenses: [legal_regulatory, system_owner, architecture, soc_csirt, security_researcher, privacy_dpo, procurement_finance, municipal_civil_protection, election_process_owner, independent_auditor_public]
+    non_goals_en: [Replacing VIRSIS, Centralising sensitive evidence, Declaring a new statutory reporting obligation]
+    non_goals_lv: [Aizstāt VIRSIS, Centralizēt sensitīvus pierādījumus, Radīt jaunu normatīvu ziņošanas pienākumu]
+  - id: latvia_cvd_authorization
+    area: cvd
+    status: pilot_ready
+    normative_status: project_proposal
+    title_en: CVD authorization and evidence baseline
+    title_lv: CVD pilnvarojuma un pierādījumu bāzes modelis
+    claim_ids: [cvd_national_framework, cvd_program_scope, cvd_not_pentest, security_txt_not_permission, bug_bounty_distinct_incentive]
+    control_ids: [cvd_ctl_01, cvd_ctl_02, cvd_ctl_03, cvd_ctl_04]
+    pilot_id: pilot_cvd_program_quality
+    review_lenses: [legal_regulatory, system_owner, architecture, soc_csirt, security_researcher, privacy_dpo, procurement_finance, municipal_civil_protection, election_process_owner, independent_auditor_public]
+    non_goals_en: [Expanding permission beyond owner authority, Treating CVD as a penetration-test contract, Making reward eligibility a remediation condition]
+    non_goals_lv: [Paplašināt atļauju ārpus pārziņa tiesībām, Pielīdzināt CVD penetrācijas testa līgumam, Padarīt atlīdzību par novēršanas priekšnoteikumu]
+  - id: defensible_vulnerability_prioritisation
+    area: cyber_resilience
+    status: pilot_ready
+    normative_status: project_proposal
+    title_en: Defensible vulnerability prioritisation
+    title_lv: Aizstāvama ievainojamību prioritizācija
+    claim_ids: [vuln_signals_are_distinct, cvss_base_is_severity_not_risk, epss_is_30day_probability, kev_is_known_exploitation_evidence, cyber_legal_and_technical_layers]
+    control_ids: [vuln_ctl_01, vuln_ctl_02, vuln_ctl_03, vuln_ctl_04]
+    pilot_id: pilot_vulnerability_prioritisation
+    review_lenses: [legal_regulatory, system_owner, architecture, soc_csirt, security_researcher, privacy_dpo, procurement_finance, municipal_civil_protection, election_process_owner, independent_auditor_public]
+    non_goals_en: [Producing a universal risk score, Replacing legal or contractual deadlines, Treating absence from KEV as safety evidence]
+    non_goals_lv: [Izveidot universālu riska skaitli, Aizstāt juridiskos vai līgumiskos termiņus, Uztvert neesamību KEV kā drošuma pierādījumu]
+  - id: degraded_operations_framework
+    area: cyber_resilience
+    status: pilot_ready
+    normative_status: project_proposal
+    title_en: Degraded operations and recovery framework
+    title_lv: Degradētas darbības un atjaunošanas ietvars
+    claim_ids: [continuity_is_explicit_risk_management_measure, election_resilience_controls, election_state_model_project_pattern, civil_existing_capabilities, civil_reuse_existing_capabilities]
+    control_ids: [deg_ctl_01, deg_ctl_02, deg_ctl_03, deg_ctl_04]
+    pilot_id: pilot_degraded_operations
+    review_lenses: [legal_regulatory, system_owner, architecture, soc_csirt, security_researcher, privacy_dpo, procurement_finance, municipal_civil_protection, election_process_owner, independent_auditor_public]
+    non_goals_en: [Prescribing one architecture for every institution, Publishing sensitive fallback details, Replacing sector-specific continuity obligations]
+    non_goals_lv: [Noteikt vienu arhitektūru visām institūcijām, Publicēt sensitīvas fallback detaļas, Aizstāt nozaru specifiskos nepārtrauktības pienākumus]

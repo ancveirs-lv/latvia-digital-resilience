@@ -18,6 +18,9 @@ DOCS = ROOT / "docs"
 DATASETS = (
     (ROOT / "data/sources.yaml", ROOT / "schemas/sources.schema.json"),
     (ROOT / "data/claims.yaml", ROOT / "schemas/claims.schema.json"),
+    (ROOT / "data/proposals.yaml", ROOT / "schemas/proposals.schema.json"),
+    (ROOT / "data/controls.yaml", ROOT / "schemas/controls.schema.json"),
+    (ROOT / "data/pilots.yaml", ROOT / "schemas/pilots.schema.json"),
 )
 
 PAGES = (
@@ -32,6 +35,12 @@ PAGES = (
     "evidence-register.md",
     "methodology.md",
     "roadmap.md",
+    "ict-lifecycle-traceability.md",
+    "cvd-authorization-framework.md",
+    "vulnerability-prioritisation.md",
+    "degraded-operations.md",
+    "skeptical-review.md",
+    "compliance-boundaries.md",
 )
 
 REQUIRED_FILES = (
@@ -181,6 +190,35 @@ def validate_evidence() -> list[str]:
     return errors
 
 
+def validate_proposal_graph() -> list[str]:
+    errors=[]
+    claims=load_yaml(ROOT / "data/claims.yaml")["claims"]
+    proposals=load_yaml(ROOT / "data/proposals.yaml")["proposals"]
+    controls=load_yaml(ROOT / "data/controls.yaml")["controls"]
+    pilots=load_yaml(ROOT / "data/pilots.yaml")["pilots"]
+    claim_ids={x["id"] for x in claims}; proposal_ids={x["id"] for x in proposals}; control_ids={x["id"] for x in controls}; pilot_ids={x["id"] for x in pilots}
+    control_map={x["id"]:x for x in controls}; pilot_map={x["id"]:x for x in pilots}
+    for label,items in (("proposal",proposals),("control",controls),("pilot",pilots)):
+        ids=[x["id"] for x in items]
+        if len(ids)!=len(set(ids)): errors.append(f"duplicate {label} id")
+    for p in proposals:
+        if set(p["claim_ids"])-claim_ids: errors.append(f"proposal {p['id']} has unknown claims")
+        if set(p["control_ids"])-control_ids: errors.append(f"proposal {p['id']} has unknown controls")
+        if p["pilot_id"] not in pilot_ids: errors.append(f"proposal {p['id']} has unknown pilot")
+        owned={c["id"] for c in controls if c["proposal_id"]==p["id"]}
+        if set(p["control_ids"])!=owned: errors.append(f"proposal {p['id']} control list mismatch")
+    for c in controls:
+        if c["proposal_id"] not in proposal_ids: errors.append(f"control {c['id']} has unknown proposal")
+    for pilot in pilots:
+        if pilot["proposal_id"] not in proposal_ids: errors.append(f"pilot {pilot['id']} has unknown proposal")
+        for cid in pilot["control_ids"]:
+            if cid not in control_map or control_map[cid]["proposal_id"]!=pilot["proposal_id"]: errors.append(f"pilot/control mismatch {pilot['id']} -> {cid}")
+    for p in proposals:
+        pilot=pilot_map.get(p["pilot_id"])
+        if pilot and pilot["proposal_id"]!=p["id"]: errors.append(f"proposal/pilot mismatch {p['id']}")
+    return errors
+
+
 def markdown_files() -> list[Path]:
     return sorted(list(ROOT.glob("*.md")) + list(DOCS.rglob("*.md")))
 
@@ -235,6 +273,7 @@ def run_all() -> list[str]:
     errors.extend(validate_language_pairs())
     errors.extend(validate_page_metadata())
     errors.extend(validate_evidence())
+    errors.extend(validate_proposal_graph())
     errors.extend(validate_local_links())
     errors.extend(validate_repository_configuration())
     return errors
@@ -252,7 +291,7 @@ def main() -> int:
     claims = len(load_yaml(ROOT / "data/claims.yaml")["claims"])
     print(
         f"Validation passed: {sources} sources, {claims} evidence claims, "
-        f"{len(PAGES)} bilingual document pairs."
+        f"4 proposals, 16 controls, 4 pilots, {len(PAGES)} bilingual document pairs."
     )
     return 0
 

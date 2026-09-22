@@ -29,3 +29,9 @@ description: Avotu hierarhija, apgalvojumu tipi, juridiskās un politiskās neit
 Katram pierādījumu ierakstam ir pārskatīšanas datums. Būtiskām izmaiņām vajadzīga avotu pārbaude, LV/EN paritāte, lokālā validācija, testi un stingrs vietnes build.
 
 Vēlēšanu saturs paliek neitrāls un tehnisks. Juridiskie apgalvojumi tiek piesaistīti jurisdikcijai un avota tekstam. Operacionāli sensitīvas detaļas tiek minimizētas.
+
+## Desmit skatpunktu adversariālais audits
+
+Būtiski priekšlikumi tiek pārbaudīti caur desmit fiksētiem skeptiskiem skatpunktiem: juridiskais/regulatīvais, sistēmas īpašnieks, arhitektūra, SOC/CSIRT, drošības pētnieks, privātums/DPO, iepirkumi/finanses, pašvaldība/civilā aizsardzība, vēlēšanu procesa īpašnieks un neatkarīgs auditors/sabiedrība.
+
+Šī ir projekta metode, ne ārēja audita aizstājējs. `pilot_ready` nozīmē ierobežotu tvērumu, mašīnlasāmas kontroles, acceptance criteria un skaidrus ne-mērķus; tas nenozīmē valsts mēroga piemērotību vai juridisku apstiprinājumu.

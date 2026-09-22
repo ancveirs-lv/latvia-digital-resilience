@@ -6,7 +6,7 @@ sources:
     url: https://www.varam.gov.lv/lv/valsts-informacijas-resursu-sistemu-un-sadarbspejas-informacijas-sistema-virsis-0
     source_type: institutional
     jurisdiction: latvia
-    supports: [ict_existing_virsis_capability, ict_reuse_before_duplication]
+    supports: [ict_existing_virsis_capability, ict_reuse_before_duplication, ict_lifecycle_metadata_boundary]
     retrieved: "2026-09-22"
 
   - id: virsis_rules
@@ -15,7 +15,25 @@ sources:
     url: https://likumi.lv/ta/id/349664
     source_type: legislation
     jurisdiction: latvia
-    supports: [ict_existing_virsis_capability, ict_reuse_before_duplication]
+    supports: [ict_existing_virsis_capability, ict_reuse_before_duplication, ict_lifecycle_metadata_boundary]
+    retrieved: "2026-09-22"
+
+  - id: varam_ikt_activity_coordination
+    title: Valsts informācijas sistēmu attīstības aktivitāšu saskaņošana
+    publisher: Viedās administrācijas un reģionālās attīstības ministrija
+    url: https://www.varam.gov.lv/lv/valsts-informacijas-sistemu-attistibas-aktivitasu-saskanosana
+    source_type: institutional
+    jurisdiction: latvia
+    supports: [ict_activity_coordination_in_virsis]
+    retrieved: "2026-09-22"
+
+  - id: first_cvss_v4_user_guide
+    title: CVSS v4.0 User Guide
+    publisher: FIRST
+    url: https://www.first.org/cvss/v4.0/user-guide
+    source_type: technical_standard
+    jurisdiction: international
+    supports: [cvss_base_is_severity_not_risk]
     retrieved: "2026-09-22"
 
   - id: national_cybersecurity_law
@@ -87,7 +105,7 @@ sources:
     url: https://eur-lex.europa.eu/eli/dir/2022/2555/oj
     source_type: eu_legislation
     jurisdiction: european_union
-    supports: [cyber_legal_and_technical_layers]
+    supports: [cyber_legal_and_technical_layers, continuity_is_explicit_risk_management_measure]
     retrieved: "2026-09-22"
 
   - id: cra
@@ -114,7 +132,7 @@ sources:
     url: https://www.first.org/epss/
     source_type: technical_standard
     jurisdiction: international
-    supports: [vuln_signals_are_distinct]
+    supports: [vuln_signals_are_distinct, epss_is_30day_probability]
     retrieved: "2026-09-22"
 
   - id: cisa_kev
@@ -123,7 +141,7 @@ sources:
     url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
     source_type: institutional_dataset
     jurisdiction: united_states
-    supports: [vuln_signals_are_distinct]
+    supports: [vuln_signals_are_distinct, kev_is_known_exploitation_evidence]
     retrieved: "2026-09-22"
 
   - id: vugd_112_latvia
