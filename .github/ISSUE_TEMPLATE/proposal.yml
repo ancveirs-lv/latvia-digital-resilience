@@ -1,0 +1,38 @@
+name: Proposal
+description: Evidence-based proposal for a project area
+title: "[Proposal] "
+labels: []
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What concrete problem or gap are you addressing?
+    validations:
+      required: true
+  - type: textarea
+    id: baseline
+    attributes:
+      label: Source-backed baseline
+      description: What already exists or is formally required? Include primary sources.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Boundaries and non-goals
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation criteria
+      description: What measurable evidence would show that the proposal worked?
+    validations:
+      required: true

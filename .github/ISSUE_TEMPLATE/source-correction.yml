@@ -1,0 +1,29 @@
+name: Source or factual correction
+description: Correct a source, locator, fact, legal boundary or translation
+title: "[Evidence] "
+labels: []
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Affected page or claim ID
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current statement
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Primary source and exact locator
+    validations:
+      required: true

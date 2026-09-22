@@ -1,0 +1,10 @@
+# Publication, evidence and automation
+/.github/ @ancveirs-lv
+/data/ @ancveirs-lv
+/schemas/ @ancveirs-lv
+/scripts/ @ancveirs-lv
+/tests/ @ancveirs-lv
+/docs/ @ancveirs-lv
+/mkdocs.yml @ancveirs-lv
+/requirements.in @ancveirs-lv
+/requirements.txt @ancveirs-lv

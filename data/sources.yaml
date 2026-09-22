@@ -1,0 +1,163 @@
+schema_version: 1
+sources:
+  - id: varam_virsis
+    title: Valsts informācijas resursu, sistēmu un sadarbspējas informācijas sistēma VIRSIS
+    publisher: Viedās administrācijas un reģionālās attīstības ministrija
+    url: https://www.varam.gov.lv/lv/valsts-informacijas-resursu-sistemu-un-sadarbspejas-informacijas-sistema-virsis-0
+    source_type: institutional
+    jurisdiction: latvia
+    supports: [ict_existing_virsis_capability, ict_reuse_before_duplication]
+    retrieved: "2026-09-22"
+
+  - id: virsis_rules
+    title: Valsts informācijas resursu, sistēmu un sadarbspējas informācijas sistēmas noteikumi
+    publisher: Likumi.lv
+    url: https://likumi.lv/ta/id/349664
+    source_type: legislation
+    jurisdiction: latvia
+    supports: [ict_existing_virsis_capability, ict_reuse_before_duplication]
+    retrieved: "2026-09-22"
+
+  - id: national_cybersecurity_law
+    title: Nacionālās kiberdrošības likums
+    publisher: Likumi.lv
+    url: https://likumi.lv/ta/id/353390
+    source_type: legislation
+    jurisdiction: latvia
+    supports: [cvd_national_framework]
+    retrieved: "2026-09-22"
+
+  - id: certlv_cvd_terms
+    title: CERT.LV CVD platform usage terms
+    publisher: CERT.LV
+    url: https://cvd.cert.lv/statictexts/view/terms-and-conditions
+    source_type: national_csirt
+    jurisdiction: latvia
+    supports: [cvd_national_framework, cvd_program_scope]
+    retrieved: "2026-09-22"
+
+  - id: certlv_cvd_faq
+    title: CERT.LV CVD platform FAQ
+    publisher: CERT.LV
+    url: https://cvd.cert.lv/faq/answers/100
+    source_type: national_csirt
+    jurisdiction: latvia
+    supports: [cvd_not_pentest]
+    retrieved: "2026-09-22"
+
+  - id: rfc9116
+    title: "RFC 9116: A File Format to Aid in Security Vulnerability Disclosure"
+    publisher: IETF
+    url: https://www.rfc-editor.org/rfc/rfc9116.html
+    source_type: technical_standard
+    jurisdiction: international
+    supports: [security_txt_not_permission]
+    retrieved: "2026-09-22"
+
+  - id: certcc_cvd_policy
+    title: Choosing a Disclosure Policy — CERT Guide to Coordinated Vulnerability Disclosure
+    publisher: CERT Coordination Center
+    url: https://certcc.github.io/CERT-Guide-to-CVD/howto/preparation/choosing_policy/
+    source_type: technical_guidance
+    jurisdiction: international
+    supports: [bug_bounty_distinct_incentive]
+    retrieved: "2026-09-22"
+
+  - id: cisa_vdp
+    title: "Binding Operational Directive 20-01: Develop and Publish a Vulnerability Disclosure Policy"
+    publisher: CISA
+    url: https://www.cisa.gov/sites/default/files/bod-20-01.pdf
+    source_type: institutional_guidance
+    jurisdiction: united_states
+    supports: [bug_bounty_distinct_incentive]
+    retrieved: "2026-09-22"
+
+  - id: certlv_resilience_2026
+    title: CERT.LV recommendations for improving infrastructure cybersecurity resilience
+    publisher: CERT.LV
+    url: https://www.cert.lv/lv/2026/07/cert-lv-rekomendacijas-infrastrukturas-kiberdrosibas-noturibas-uzlabosanai-pret-kiberuzbrukumiem
+    source_type: national_csirt
+    jurisdiction: latvia
+    supports: [cyber_resilience_inventory_patch_segment]
+    retrieved: "2026-09-22"
+
+  - id: nis2
+    title: Directive (EU) 2022/2555 (NIS2)
+    publisher: EUR-Lex
+    url: https://eur-lex.europa.eu/eli/dir/2022/2555/oj
+    source_type: eu_legislation
+    jurisdiction: european_union
+    supports: [cyber_legal_and_technical_layers]
+    retrieved: "2026-09-22"
+
+  - id: cra
+    title: Regulation (EU) 2024/2847 (Cyber Resilience Act)
+    publisher: EUR-Lex
+    url: https://eur-lex.europa.eu/eli/reg/2024/2847/oj
+    source_type: eu_legislation
+    jurisdiction: european_union
+    supports: [cyber_legal_and_technical_layers]
+    retrieved: "2026-09-22"
+
+  - id: first_cvss
+    title: Common Vulnerability Scoring System
+    publisher: FIRST
+    url: https://www.first.org/cvss/
+    source_type: technical_standard
+    jurisdiction: international
+    supports: [vuln_signals_are_distinct]
+    retrieved: "2026-09-22"
+
+  - id: first_epss
+    title: Exploit Prediction Scoring System
+    publisher: FIRST
+    url: https://www.first.org/epss/
+    source_type: technical_standard
+    jurisdiction: international
+    supports: [vuln_signals_are_distinct]
+    retrieved: "2026-09-22"
+
+  - id: cisa_kev
+    title: Known Exploited Vulnerabilities Catalog
+    publisher: CISA
+    url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+    source_type: institutional_dataset
+    jurisdiction: united_states
+    supports: [vuln_signals_are_distinct]
+    retrieved: "2026-09-22"
+
+  - id: vugd_112_latvia
+    title: Tīmekļvietne www.112.lv un lietotne 112 Latvija
+    publisher: Valsts ugunsdzēsības un glābšanas dienests
+    url: https://www.vugd.gov.lv/lv/timeklvietne-www112lv-un-lietotne-112-latvija
+    source_type: institutional
+    jurisdiction: latvia
+    supports: [civil_existing_capabilities, civil_reuse_existing_capabilities]
+    retrieved: "2026-09-22"
+
+  - id: vugd_vucap
+    title: Vienotas civilās aizsardzības un ugunsdrošības pārvaldības platformas ieviešana
+    publisher: Valsts ugunsdzēsības un glābšanas dienests
+    url: https://www.vugd.gov.lv/lv/projekts/vienotas-civilas-aizsardzibas-un-ugunsdrosibas-parvaldibas-platformas-ieviesana
+    source_type: institutional
+    jurisdiction: latvia
+    supports: [civil_existing_capabilities, civil_reuse_existing_capabilities]
+    retrieved: "2026-09-22"
+
+  - id: eu_election_compendium
+    title: Cybersecurity compendium on protecting the integrity of elections
+    publisher: European Commission / NIS Cooperation Group / ENISA
+    url: https://digital-strategy.ec.europa.eu/en/news/new-cybersecurity-compendium-how-protect-integrity-elections-published
+    source_type: institutional_guidance
+    jurisdiction: european_union
+    supports: [election_resilience_controls, election_state_model_project_pattern]
+    retrieved: "2026-09-22"
+
+  - id: whistleblower_law
+    title: Trauksmes celšanas likums
+    publisher: Likumi.lv
+    url: https://likumi.lv/ta/id/329680
+    source_type: legislation
+    jurisdiction: latvia
+    supports: [accountability_whistleblowing_boundary]
+    retrieved: "2026-09-22"

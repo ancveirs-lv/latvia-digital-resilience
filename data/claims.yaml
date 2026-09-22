@@ -1,0 +1,208 @@
+schema_version: 1
+claims:
+  - id: ict_existing_virsis_capability
+    area: ict_governance
+    claim_type: source_fact
+    text_en: VIRSIS already records information about state information systems, information resources, and the technology resources and services needed for their operation.
+    text_lv: VIRSIS jau uzkrāj informāciju par valsts informācijas sistēmām, informācijas resursiem un to darbībai nepieciešamajiem tehnoloģiskajiem resursiem un pakalpojumiem.
+    citations:
+      - source_id: varam_virsis
+        support_type: defines
+        locator: VIRSIS overview
+      - source_id: virsis_rules
+        support_type: defines
+        locator: Sections 1-2 and system-management provisions
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: ict_reuse_before_duplication
+    area: ict_governance
+    claim_type: project_recommendation
+    text_en: Before proposing a new central ICT registry or evidence platform, map the capability against VIRSIS and other existing state shared services and justify any duplication.
+    text_lv: Pirms jauna centrāla IKT reģistra vai pierādījumu platformas izveides priekšlikuma tā funkcijas jāsalīdzina ar VIRSIS un citiem esošajiem valsts koplietošanas pakalpojumiem un jāpamato jebkura dublēšana.
+    citations:
+      - source_id: varam_virsis
+        support_type: context
+        locator: VIRSIS scope and stored information
+      - source_id: virsis_rules
+        support_type: context
+        locator: ICT resource and service management scope
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: cvd_national_framework
+    area: cvd
+    claim_type: source_fact
+    text_en: Latvia's national cybersecurity framework regulates coordinated vulnerability disclosure, while CERT.LV operates the national reporting platform and coordination process described in its platform terms.
+    text_lv: Latvijas nacionālais kiberdrošības regulējums reglamentē koordinētu ievainojamību atklāšanu, bet CERT.LV nodrošina ievainojamību ziņošanas platformu un tās noteikumos aprakstīto koordinācijas procesu.
+    citations:
+      - source_id: national_cybersecurity_law
+        support_type: defines
+        locator: Sections 39-40
+      - source_id: certlv_cvd_terms
+        support_type: defines
+        locator: General information, sections 1.1-1.2
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: cvd_program_scope
+    area: cvd
+    claim_type: source_fact
+    text_en: On the CERT.LV platform, participating resource owners can publish a programme identifying resources and testing conditions; that programme-specific scope matters to permitted research.
+    text_lv: CERT.LV platformā iesaistītie resursu pārziņi var publicēt programmu ar resursiem un testēšanas nosacījumiem; atļautās izpētes robežas ir saistītas ar konkrētās programmas tvērumu.
+    citations:
+      - source_id: certlv_cvd_terms
+        support_type: defines
+        locator: Platform programme and participation rules
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: cvd_not_pentest
+    area: cvd
+    claim_type: boundary
+    text_en: Vulnerability discovery and reporting through the CERT.LV CVD process is not equivalent to a full security assessment or penetration test.
+    text_lv: Ievainojamību atklāšana un ziņošana CERT.LV CVD procesā nav pielīdzināma pilnvērtīgam drošības auditam vai penetrācijas testam.
+    citations:
+      - source_id: certlv_cvd_faq
+        support_type: limits
+        locator: FAQ answer on whether researcher checks are a vulnerability-testing service
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: security_txt_not_permission
+    area: cvd
+    claim_type: boundary
+    text_en: The presence or absence of security.txt does not itself grant or deny permission to test a system.
+    text_lv: security.txt esamība vai neesamība pati par sevi nedod un neatņem atļauju testēt sistēmu.
+    citations:
+      - source_id: rfc9116
+        support_type: limits
+        locator: Section 5.5, No Implied Permission for Testing
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: bug_bounty_distinct_incentive
+    area: bug_bounty
+    claim_type: boundary
+    text_en: A Bug Bounty adds a reward mechanism with eligibility criteria; it is distinct from the broader disclosure process and does not by itself expand testing scope.
+    text_lv: Bug Bounty pievieno atlīdzības mehānismu ar atbilstības kritērijiem; tas atšķiras no plašāka ievainojamību ziņošanas procesa un pats par sevi nepaplašina testēšanas tvērumu.
+    citations:
+      - source_id: certcc_cvd_policy
+        support_type: supports
+        locator: Policy scope and bounty eligibility discussion
+      - source_id: cisa_vdp
+        support_type: supports
+        locator: VDP and Bug Bounty distinction
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: cyber_resilience_inventory_patch_segment
+    area: cyber_resilience
+    claim_type: source_fact
+    text_en: CERT.LV's 2026 resilience recommendations emphasise asset inventory, patch awareness, segmentation, and use of the national CVD platform for exposed resources.
+    text_lv: CERT.LV 2026. gada noturības rekomendācijas uzsver aktīvu uzskaiti, drošības ielāpu pārvaldību, segmentāciju un CVD platformas izmantošanu publiski eksponētiem resursiem.
+    citations:
+      - source_id: certlv_resilience_2026
+        support_type: supports
+        locator: Infrastructure holder recommendations and CVD platform section
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: cyber_legal_and_technical_layers
+    area: cyber_resilience
+    claim_type: project_recommendation
+    text_en: Technical prioritisation models should be used alongside, not as substitutes for, applicable legal, contractual, and organisational cybersecurity duties.
+    text_lv: Tehniskie prioritizācijas modeļi jālieto kopā ar piemērojamajiem juridiskajiem, līgumiskajiem un organizatoriskajiem kiberdrošības pienākumiem, nevis to vietā.
+    citations:
+      - source_id: nis2
+        support_type: context
+        locator: Cybersecurity risk-management framework
+      - source_id: cra
+        support_type: context
+        locator: Product cybersecurity lifecycle requirements
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: vuln_signals_are_distinct
+    area: cyber_resilience
+    claim_type: source_fact
+    text_en: CVSS, EPSS, and KEV represent different vulnerability-prioritisation signals and should not be treated as interchangeable.
+    text_lv: CVSS, EPSS un KEV ir atšķirīgi ievainojamību prioritizācijas signāli un nav savstarpēji aizvietojami.
+    citations:
+      - source_id: first_cvss
+        support_type: defines
+        locator: CVSS overview
+      - source_id: first_epss
+        support_type: defines
+        locator: EPSS overview
+      - source_id: cisa_kev
+        support_type: defines
+        locator: KEV Catalog overview
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: civil_existing_capabilities
+    area: civil_protection
+    claim_type: source_fact
+    text_en: Latvia already operates public emergency-information capabilities including 112/112 Latvija, while VUGD reports that VUCAP has been implemented as a state information system for fire-safety and civil-protection management.
+    text_lv: Latvijā jau darbojas publiskas ārkārtas informācijas spējas, tostarp 112/112 Latvija, bet VUGD norāda, ka VUCAP ir ieviesta kā valsts informācijas sistēma ugunsdrošības un civilās aizsardzības pārvaldībai.
+    citations:
+      - source_id: vugd_112_latvia
+        support_type: defines
+        locator: Purpose and functionality of 112 Latvija
+      - source_id: vugd_vucap
+        support_type: defines
+        locator: Project result and status as of 31 May 2026
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: civil_reuse_existing_capabilities
+    area: civil_protection
+    claim_type: project_recommendation
+    text_en: New civil-protection digital proposals should first map existing national capabilities and integration points, and should justify any duplicated function.
+    text_lv: Jauniem civilās aizsardzības digitālajiem priekšlikumiem vispirms jāizvērtē esošās valsts spējas un integrācijas punkti un jāpamato jebkuras funkcijas dublēšana.
+    citations:
+      - source_id: vugd_112_latvia
+        support_type: context
+        locator: Existing public-facing capability
+      - source_id: vugd_vucap
+        support_type: context
+        locator: Existing civil-protection management platform
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: election_resilience_controls
+    area: election_resilience
+    claim_type: source_fact
+    text_en: EU election-cybersecurity guidance covers risk management, information sharing, awareness and training, incident handling, and cybersecurity measures across the election cycle.
+    text_lv: ES vēlēšanu kiberdrošības vadlīnijas aptver risku pārvaldību, informācijas apmaiņu, informētību un mācības, incidentu pārvaldību un kiberdrošības pasākumus visā vēlēšanu ciklā.
+    citations:
+      - source_id: eu_election_compendium
+        support_type: supports
+        locator: 2024 election cybersecurity compendium overview
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: election_state_model_project_pattern
+    area: election_resilience
+    claim_type: project_recommendation
+    text_en: The NORMAL → DEGRADED → OFFLINE/MANUAL → RECOVERY/RECONCILIATION model in this repository is a project-defined continuity pattern, not an official Latvian election-state taxonomy.
+    text_lv: Šajā repozitorijā lietotais NORMAL → DEGRADED → OFFLINE/MANUAL → RECOVERY/RECONCILIATION modelis ir projekta veidots darbības nepārtrauktības modelis, ne oficiāla Latvijas vēlēšanu stāvokļu taksonomija.
+    citations:
+      - source_id: eu_election_compendium
+        support_type: context
+        locator: Election-cycle risk and incident-management guidance
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
+
+  - id: accountability_whistleblowing_boundary
+    area: accountability
+    claim_type: boundary
+    text_en: Latvian whistleblowing law protects reporting of wrongdoing that may harm the public interest and distinguishes it from reporting solely about a personal-interest infringement.
+    text_lv: Latvijas Trauksmes celšanas likums aizsargā ziņošanu par pārkāpumu, kas var kaitēt sabiedrības interesēm, un nošķir to no ziņošanas tikai par personīgu interešu aizskārumu.
+    citations:
+      - source_id: whistleblower_law
+        support_type: defines
+        locator: Sections 1-3
+    last_reviewed: "2026-09-22"
+    reviewer_role: maintainer
