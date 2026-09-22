@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ancveirs-lv/latvia-digital-resilience/main/schemas/claims.schema.json",
+  "type": "object",
+  "required": ["schema_version", "claims"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "area", "claim_type", "text_en", "text_lv", "citations", "last_reviewed", "reviewer_role"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "area": {
+            "enum": ["ict_governance", "cvd", "bug_bounty", "cyber_resilience", "civil_protection", "election_resilience", "accountability"]
+          },
+          "claim_type": {
+            "enum": ["source_fact", "boundary", "project_recommendation", "editorial_policy"]
+          },
+          "text_en": {"type": "string", "minLength": 10},
+          "text_lv": {"type": "string", "minLength": 10},
+          "citations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["source_id", "support_type", "locator"],
+              "additionalProperties": false,
+              "properties": {
+                "source_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+                "support_type": {"enum": ["defines", "supports", "limits", "context"]},
+                "locator": {"type": "string", "minLength": 3}
+              }
+            }
+          },
+          "last_reviewed": {"type": "string", "format": "date"},
+          "reviewer_role": {"type": "string", "minLength": 3}
+        }
+      }
+    }
+  }
+}

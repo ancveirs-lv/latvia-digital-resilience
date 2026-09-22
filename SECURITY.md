@@ -1,7 +1,9 @@
 # Security policy
 
-Šis repozitorijs nav ievainojamību ziņošanas platforma.
+This repository is not a vulnerability-reporting channel for third-party systems.
 
-Ja atrasta reāla ievainojamība, nepublicē ekspluatācijas detaļas publiskā Issue. Izmanto attiecīgās organizācijas CVD kanālu vai, ja piemērojams, CERT.LV koordinēto ievainojamību ziņošanas procesu.
+If you discover a real vulnerability in a Latvian public or private resource, do not publish exploitation details in an issue. Use the resource owner's published disclosure channel or the applicable CERT.LV coordinated vulnerability-disclosure process.
 
-Šeit drīkst diskutēt par CVD politiku, procesu dizainu, safe-harbour principiem, triāžu un sistēmiskiem uzlabojumiem.
+If the vulnerability concerns this repository's own automation or site, use GitHub private vulnerability reporting when available. Do not include credentials or secrets in public issues.
+
+Policy discussion about CVD, safe-harbour design, triage, scope, evidence minimisation, and systemic improvements is welcome when it does not expose a live target.

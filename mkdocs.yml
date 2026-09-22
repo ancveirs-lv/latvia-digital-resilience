@@ -1,0 +1,82 @@
+site_name: Latvia Digital Resilience
+site_description: Evidence-based bilingual reference for digital governance, cybersecurity and public resilience in Latvia
+site_author: Zigmārs Ancveirs
+site_url: https://ancveirs-lv.github.io/latvia-digital-resilience/
+repo_name: latvia-digital-resilience
+repo_url: https://github.com/ancveirs-lv/latvia-digital-resilience
+edit_uri: edit/main/docs/
+copyright: Text and data © Zigmārs Ancveirs, CC BY 4.0
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  language: en
+  palette:
+    scheme: default
+    primary: black
+    accent: grey
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - content.action.edit
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+
+extra_css:
+  - assets/styles.css
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: false
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: lv
+          name: Latviešu
+          build: true
+          site_name: Latvijas digitālā noturība
+          site_description: Pierādījumos balstīta divvalodu atsauce par digitālo pārvaldību, kiberdrošību un sabiedrības noturību Latvijā
+          nav_translations:
+            Home: Sākums
+            ICT governance and traceability: IKT pārvaldība un izsekojamība
+            CVD and good-faith security research: CVD un labticīga drošības izpēte
+            Bug Bounty and incentives: Bug Bounty un atlīdzības mehānismi
+            Cybersecurity and digital resilience: Kiberdrošība un digitālā noturība
+            Civil protection and continuity: Civilā aizsardzība un nepārtrauktība
+            Election and critical-process resilience: Vēlēšanu un kritisku procesu noturība
+            Institutional accountability: Institucionālā atbildība
+            Evidence register: Pierādījumu reģistrs
+            Methodology: Metodoloģija
+            Roadmap: Attīstības plāns
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - ICT governance and traceability: ict-governance.md
+  - CVD and good-faith security research: cvd-security-research.md
+  - Bug Bounty and incentives: bug-bounty.md
+  - Cybersecurity and digital resilience: cyber-resilience.md
+  - Civil protection and continuity: civil-protection.md
+  - Election and critical-process resilience: election-resilience.md
+  - Institutional accountability: institutional-accountability.md
+  - Evidence register: evidence-register.md
+  - Methodology: methodology.md
+  - Roadmap: roadmap.md
+
+strict: true

@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this reference, please cite it as follows."
+title: "Latvia Digital Resilience"
+type: dataset
+version: 0.1.0
+date-released: 2026-09-22
+authors:
+  - family-names: Ancveirs
+    given-names: Zigmārs
+license: CC-BY-4.0
+repository-code: "https://github.com/ancveirs-lv/latvia-digital-resilience"
+url: "https://ancveirs-lv.github.io/latvia-digital-resilience/"
+abstract: "A bilingual Latvian-English, evidence-based public reference for digital governance, cybersecurity, coordinated vulnerability disclosure, civil protection, critical-process resilience, and institutional accountability in Latvia."
