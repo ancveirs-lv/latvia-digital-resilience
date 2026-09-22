@@ -32,6 +32,10 @@ Mašīnlasāmie pierādījumi glabājas:
 
 - `data/sources.yaml` — autoritatīvi vai tehniski rigorozie avoti;
 - `data/claims.yaml` — apgalvojumu līmeņa ieraksti ar avotu vietām, jurisdikciju/kontekstu un pārskatīšanas datumiem;
+- `data/proposals.yaml` — ierobežoti projekta priekšlikumi ar skaidru normatīvo statusu un ne-mērķiem;
+- `data/controls.yaml` — pārbaudāmas kontroles, kas sasaistītas ar priekšlikumiem;
+- `data/pilots.yaml` — ierobežots pilotu tvērums, priekšnosacījumi un iepriekš definēti pieņemšanas pierādījumi;
+- `data/reviews.yaml` — 40 priekšlikumiem specifiski skeptiskā audita atradumi: četri priekšlikumi × desmit fiksēti skatpunkti;
 - `schemas/` — JSON shēmas, kuras pārbauda CI.
 
 Atsauce uz avotu automātiski nenozīmē, ka tas pamato visu lapā rakstīto. Pierādījumu reģistrs norāda, ko avots **definē, pamato, ierobežo vai tikai ievieto kontekstā**.
@@ -43,6 +47,7 @@ Pull request un `main` ir paredzēti automātiskai pārbaudei:
 - LV/EN lapu strukturālā paritāte;
 - YAML/JSON Schema validācija;
 - apgalvojumu un avotu savstarpējo saišu integritāte;
+- priekšlikumu/kontroļu/pilotu grafa integritāte un pilnīgs desmit skatpunktu audita pārklājums;
 - lokālo saišu pārbaude;
 - obligātie lapu metadati;
 - stingrs MkDocs build;

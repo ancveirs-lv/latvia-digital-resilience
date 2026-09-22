@@ -35,3 +35,5 @@ Vēlēšanu saturs paliek neitrāls un tehnisks. Juridiskie apgalvojumi tiek pie
 Būtiski priekšlikumi tiek pārbaudīti caur desmit fiksētiem skeptiskiem skatpunktiem: juridiskais/regulatīvais, sistēmas īpašnieks, arhitektūra, SOC/CSIRT, drošības pētnieks, privātums/DPO, iepirkumi/finanses, pašvaldība/civilā aizsardzība, vēlēšanu procesa īpašnieks un neatkarīgs auditors/sabiedrība.
 
 Šī ir projekta metode, ne ārēja audita aizstājējs. `pilot_ready` nozīmē ierobežotu tvērumu, mašīnlasāmas kontroles, acceptance criteria un skaidrus ne-mērķus; tas nenozīmē valsts mēroga piemērotību vai juridisku apstiprinājumu.
+
+Kanoniskie priekšlikumiem specifiskie skeptiskā audita atradumi glabājas `data/reviews.yaml`; CI katram priekšlikumam prasa tieši vienu atradumu katrā no desmit skatpunktiem.

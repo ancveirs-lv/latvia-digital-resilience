@@ -33,3 +33,5 @@ This is a **structured adversarial review method**, not a claim that ten indepen
 ## Disposition
 
 All four proposals are suitable for **bounded pilots**, not automatic nationwide mandates. Promotion beyond `pilot_ready` requires documented outcomes and applicable legal, privacy, security and operational review.
+
+The canonical proposal-specific 4 × 10 review matrix is stored in `data/reviews.yaml` and is completeness-checked by CI.

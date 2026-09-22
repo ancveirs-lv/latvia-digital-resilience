@@ -1,1 +1,128 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["schema_version","proposals"],"additionalProperties":false,"properties":{"schema_version":{"const":1},"proposals":{"type":"array","minItems":1,"items":{"type":"object","additionalProperties":false,"required":["id","area","status","normative_status","title_en","title_lv","claim_ids","control_ids","pilot_id","review_lenses","non_goals_en","non_goals_lv"],"properties":{"id":{"type":"string"},"area":{"enum":["ict_governance","cvd","cyber_resilience"]},"status":{"enum":["concept","pilot_ready","pilot_running","validated","retired"]},"normative_status":{"const":"project_proposal"},"title_en":{"type":"string"},"title_lv":{"type":"string"},"claim_ids":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},"control_ids":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},"pilot_id":{"type":"string"},"review_lenses":{"type":"array","minItems":10,"maxItems":10,"uniqueItems":true,"items":{"enum":["legal_regulatory","system_owner","architecture","soc_csirt","security_researcher","privacy_dpo","procurement_finance","municipal_civil_protection","election_process_owner","independent_auditor_public"]}},"non_goals_en":{"type":"array","minItems":1,"items":{"type":"string"}},"non_goals_lv":{"type":"array","minItems":1,"items":{"type":"string"}}}}}}}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ancveirs-lv/latvia-digital-resilience/main/schemas/proposals.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "proposals"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "proposals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "area",
+          "status",
+          "normative_status",
+          "title_en",
+          "title_lv",
+          "claim_ids",
+          "control_ids",
+          "pilot_id",
+          "review_lenses",
+          "non_goals_en",
+          "non_goals_lv"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "area": {
+            "enum": [
+              "ict_governance",
+              "cvd",
+              "cyber_resilience"
+            ]
+          },
+          "status": {
+            "enum": [
+              "concept",
+              "pilot_ready",
+              "pilot_running",
+              "validated",
+              "retired"
+            ]
+          },
+          "normative_status": {
+            "const": "project_proposal"
+          },
+          "title_en": {
+            "type": "string",
+            "minLength": 5
+          },
+          "title_lv": {
+            "type": "string",
+            "minLength": 5
+          },
+          "claim_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9_]+$"
+            }
+          },
+          "control_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9_]+$"
+            }
+          },
+          "pilot_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "review_lenses": {
+            "type": "array",
+            "minItems": 10,
+            "maxItems": 10,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "legal_regulatory",
+                "system_owner",
+                "architecture",
+                "soc_csirt",
+                "security_researcher",
+                "privacy_dpo",
+                "procurement_finance",
+                "municipal_civil_protection",
+                "election_process_owner",
+                "independent_auditor_public"
+              ]
+            }
+          },
+          "non_goals_en": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 5
+            }
+          },
+          "non_goals_lv": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 5
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -33,3 +33,5 @@ description: Četru noturības priekšlikumu adversariāla pārbaude no desmit f
 ## Slēdziens
 
 Visi četri priekšlikumi ir piemēroti **ierobežotiem pilotiem**, ne automātiskam valsts mēroga mandātam. Pārejai tālāk par `pilot_ready` vajadzīgi dokumentēti rezultāti un piemērojamā juridiskā, privātuma, drošības un operacionālā pārbaude.
+
+Kanoniskā 4 × 10 priekšlikumiem specifiskā audita matrica glabājas `data/reviews.yaml`, un CI pārbauda tās pilnīgumu.

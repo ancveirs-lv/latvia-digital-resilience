@@ -1,38 +1,149 @@
 schema_version: 1
 pilots:
-  - id: pilot_ict_traceability
-    proposal_id: ict_lifecycle_traceability
-    control_ids: [ict_ctl_01, ict_ctl_02, ict_ctl_03, ict_ctl_04]
-    scope_en: One non-classified public-sector service and one bounded release cycle using existing authoritative systems.
-    scope_lv: Viens neklasificēts publiskā sektora pakalpojums un viens ierobežots laidiena cikls izmantojot esošās autoritatīvās sistēmas.
-    acceptance_criteria:
-      - {id: ict_a1, statement_en: Every sampled production change resolves to an accountable owner approved change deployed release and controlled evidence reference., statement_lv: Katra atlasītā produkcijas izmaiņa atrisinās līdz īpašniekam apstiprinātai izmaiņai izvietotam laidienam un kontrolētai pierādījuma atsaucei., evidence_required: Trace report}
-      - {id: ict_a2, statement_en: No source code credentials secrets or restricted payloads are copied into the traceability index., statement_lv: Izsekojamības indeksā netiek kopēts pirmkods akreditācijas dati noslēpumi vai ierobežots saturs., evidence_required: Field inventory}
-      - {id: ict_a3, statement_en: Emergency changes reconcile to post-change review and rollback evidence., statement_lv: Ārkārtas izmaiņas sasaistās ar pēcapstrādes pārskatu un rollback pierādījumu., evidence_required: Exercise record}
-  - id: pilot_cvd_program_quality
-    proposal_id: latvia_cvd_authorization
-    control_ids: [cvd_ctl_01, cvd_ctl_02, cvd_ctl_03, cvd_ctl_04]
-    scope_en: One voluntary public-sector CVD programme for explicitly listed internet-facing resources.
-    scope_lv: Viena brīvprātīga publiskā sektora CVD programma skaidri uzskaitītiem internetā eksponētiem resursiem.
-    acceptance_criteria:
-      - {id: cvd_a1, statement_en: Every asset is classified as in scope out of scope or third-party or unknown before launch., statement_lv: Pirms palaišanas katrs aktīvs ir klasificēts kā testējams netestējams vai trešās puses vai nezināms., evidence_required: Scope inventory}
-      - {id: cvd_a2, statement_en: Terms contain stop conditions data-minimisation rules and third-party boundaries., statement_lv: Noteikumi ietver apstāšanās nosacījumus datu minimizāciju un trešo pušu robežas., evidence_required: Approved terms}
-      - {id: cvd_a3, statement_en: Every report has auditable timestamps for receipt triage validation and closure or transfer., statement_lv: Katram ziņojumam ir auditējami laika zīmogi saņemšanai triāžai validācijai un slēgšanai vai nodošanai., evidence_required: Redacted state export}
-  - id: pilot_vulnerability_prioritisation
-    proposal_id: defensible_vulnerability_prioritisation
-    control_ids: [vuln_ctl_01, vuln_ctl_02, vuln_ctl_03, vuln_ctl_04]
-    scope_en: Historical non-production vulnerability sample across at least two asset classes.
-    scope_lv: Vēsturiska neprodukcijas ievainojamību izlase vismaz divās aktīvu klasēs.
-    acceptance_criteria:
-      - {id: vuln_a1, statement_en: Sampled decisions preserve CVSS version or vector EPSS observation date KEV timestamp asset context and rationale., statement_lv: Atlasītie lēmumi saglabā CVSS versiju vai vektoru EPSS datumu KEV laika zīmogu aktīva kontekstu un pamatojumu., evidence_required: Decision export}
-      - {id: vuln_a2, statement_en: The model does not infer safe status from low CVSS low EPSS or absence from KEV., statement_lv: Modelis neizsecina drošu statusu no zema CVSS zema EPSS vai neesamības KEV., evidence_required: Boundary tests}
-      - {id: vuln_a3, statement_en: Manual overrides are attributable evidence-backed and reviewable., statement_lv: Manuālie izņēmumi ir attiecināmi balstīti pierādījumos un pārskatāmi., evidence_required: Override audit}
-  - id: pilot_degraded_operations
-    proposal_id: degraded_operations_framework
-    control_ids: [deg_ctl_01, deg_ctl_02, deg_ctl_03, deg_ctl_04]
-    scope_en: Tabletop and controlled exercise for one critical public process without public sensitive operational detail.
-    scope_lv: Galda un kontrolēts praktisks vingrinājums vienam kritiskam publiskam procesam bez sensitīvu detaļu publicēšanas.
-    acceptance_criteria:
-      - {id: deg_a1, statement_en: Exercise demonstrates controlled transition into degraded or manual operation and back to recovery., statement_lv: Vingrinājums demonstrē kontrolētu pāreju uz degradētu vai manuālu darbību un atpakaļ uz atjaunošanu., evidence_required: Exercise timeline}
-      - {id: deg_a2, statement_en: The authoritative record remains identifiable throughout the exercise., statement_lv: Autoritatīvais ieraksts paliek identificējams visa vingrinājuma laikā., evidence_required: Ownership log}
-      - {id: deg_a3, statement_en: Recovery accounts for all test records and documents every reconciliation conflict., statement_lv: Atjaunošanā uzskaita visus testa ierakstus un dokumentē katru saskaņošanas konfliktu., evidence_required: Reconciliation report}
+- id: pilot_ict_traceability
+  proposal_id: ict_lifecycle_traceability
+  control_ids:
+  - ict_ctl_01
+  - ict_ctl_02
+  - ict_ctl_03
+  - ict_ctl_04
+  scope_en: One non-classified public-sector service and one bounded release cycle
+    using existing authoritative systems.
+  scope_lv: Viens neklasificēts publiskā sektora pakalpojums un viens ierobežots laidiena
+    cikls izmantojot esošās autoritatīvās sistēmas.
+  acceptance_criteria:
+  - id: ict_a1
+    statement_en: Every sampled production change resolves to an accountable owner
+      approved change deployed release and controlled evidence reference.
+    statement_lv: Katra atlasītā produkcijas izmaiņa atrisinās līdz īpašniekam apstiprinātai
+      izmaiņai izvietotam laidienam un kontrolētai pierādījuma atsaucei.
+    evidence_required: Trace report
+  - id: ict_a2
+    statement_en: No source code credentials secrets or restricted payloads are copied
+      into the traceability index.
+    statement_lv: Izsekojamības indeksā netiek kopēts pirmkods akreditācijas dati
+      noslēpumi vai ierobežots saturs.
+    evidence_required: Field inventory
+  - id: ict_a3
+    statement_en: Emergency changes reconcile to post-change review and rollback evidence.
+    statement_lv: Ārkārtas izmaiņas sasaistās ar pēcapstrādes pārskatu un rollback
+      pierādījumu.
+    evidence_required: Exercise record
+  prerequisites_en:
+  - A named service owner and evidence owners.
+  - Existing change release and deployment records.
+  - Data-classification review before integration.
+  prerequisites_lv:
+  - Nosaukts pakalpojuma īpašnieks un pierādījumu īpašnieki.
+  - Esoši izmaiņu laidienu un izvietošanas ieraksti.
+  - Datu klasifikācijas pārbaude pirms integrācijas.
+- id: pilot_cvd_program_quality
+  proposal_id: latvia_cvd_authorization
+  control_ids:
+  - cvd_ctl_01
+  - cvd_ctl_02
+  - cvd_ctl_03
+  - cvd_ctl_04
+  scope_en: One voluntary public-sector CVD programme for explicitly listed internet-facing
+    resources.
+  scope_lv: Viena brīvprātīga publiskā sektora CVD programma skaidri uzskaitītiem
+    internetā eksponētiem resursiem.
+  acceptance_criteria:
+  - id: cvd_a1
+    statement_en: Every asset is classified as in scope out of scope or third-party
+      or unknown before launch.
+    statement_lv: Pirms palaišanas katrs aktīvs ir klasificēts kā testējams netestējams
+      vai trešās puses vai nezināms.
+    evidence_required: Scope inventory
+  - id: cvd_a2
+    statement_en: Terms contain stop conditions data-minimisation rules and third-party
+      boundaries.
+    statement_lv: Noteikumi ietver apstāšanās nosacījumus datu minimizāciju un trešo
+      pušu robežas.
+    evidence_required: Approved terms
+  - id: cvd_a3
+    statement_en: Every report has auditable timestamps for receipt triage validation
+      and closure or transfer.
+    statement_lv: Katram ziņojumam ir auditējami laika zīmogi saņemšanai triāžai validācijai
+      un slēgšanai vai nodošanai.
+    evidence_required: Redacted state export
+  prerequisites_en:
+  - The resource owner has authority to include every in-scope asset.
+  - Legal and privacy review of programme terms.
+  - Named triage and remediation owners.
+  prerequisites_lv:
+  - Resursa pārzinim ir tiesības iekļaut katru testējamo aktīvu.
+  - Programmas noteikumu juridiskā un privātuma pārbaude.
+  - Nosaukti triāžas un novēršanas īpašnieki.
+- id: pilot_vulnerability_prioritisation
+  proposal_id: defensible_vulnerability_prioritisation
+  control_ids:
+  - vuln_ctl_01
+  - vuln_ctl_02
+  - vuln_ctl_03
+  - vuln_ctl_04
+  scope_en: Historical non-production vulnerability sample across at least two asset
+    classes.
+  scope_lv: Vēsturiska neprodukcijas ievainojamību izlase vismaz divās aktīvu klasēs.
+  acceptance_criteria:
+  - id: vuln_a1
+    statement_en: Sampled decisions preserve CVSS version or vector EPSS observation
+      date KEV timestamp asset context and rationale.
+    statement_lv: Atlasītie lēmumi saglabā CVSS versiju vai vektoru EPSS datumu KEV
+      laika zīmogu aktīva kontekstu un pamatojumu.
+    evidence_required: Decision export
+  - id: vuln_a2
+    statement_en: The model does not infer safe status from low CVSS low EPSS or absence
+      from KEV.
+    statement_lv: Modelis neizsecina drošu statusu no zema CVSS zema EPSS vai neesamības
+      KEV.
+    evidence_required: Boundary tests
+  - id: vuln_a3
+    statement_en: Manual overrides are attributable evidence-backed and reviewable.
+    statement_lv: Manuālie izņēmumi ir attiecināmi balstīti pierādījumos un pārskatāmi.
+    evidence_required: Override audit
+  prerequisites_en:
+  - Reproducible CVE inventory and observation timestamps.
+  - Asset criticality and exposure context.
+  - Documented mandatory deadlines where applicable.
+  prerequisites_lv:
+  - Reproducējama CVE inventarizācija un novērojuma laika zīmogi.
+  - Aktīvu kritiskuma un ekspozīcijas konteksts.
+  - Dokumentēti obligātie termiņi ja tie ir piemērojami.
+- id: pilot_degraded_operations
+  proposal_id: degraded_operations_framework
+  control_ids:
+  - deg_ctl_01
+  - deg_ctl_02
+  - deg_ctl_03
+  - deg_ctl_04
+  scope_en: Tabletop and controlled exercise for one critical public process without
+    public sensitive operational detail.
+  scope_lv: Galda un kontrolēts praktisks vingrinājums vienam kritiskam publiskam
+    procesam bez sensitīvu detaļu publicēšanas.
+  acceptance_criteria:
+  - id: deg_a1
+    statement_en: Exercise demonstrates controlled transition into degraded or manual
+      operation and back to recovery.
+    statement_lv: Vingrinājums demonstrē kontrolētu pāreju uz degradētu vai manuālu
+      darbību un atpakaļ uz atjaunošanu.
+    evidence_required: Exercise timeline
+  - id: deg_a2
+    statement_en: The authoritative record remains identifiable throughout the exercise.
+    statement_lv: Autoritatīvais ieraksts paliek identificējams visa vingrinājuma
+      laikā.
+    evidence_required: Ownership log
+  - id: deg_a3
+    statement_en: Recovery accounts for all test records and documents every reconciliation
+      conflict.
+    statement_lv: Atjaunošanā uzskaita visus testa ierakstus un dokumentē katru saskaņošanas
+      konfliktu.
+    evidence_required: Reconciliation report
+  prerequisites_en:
+  - A named process owner and authoritative record.
+  - Predeclared dependencies and fallback assumptions.
+  - Exercise safety boundary and rollback plan.
+  prerequisites_lv:
+  - Nosaukts procesa īpašnieks un autoritatīvais ieraksts.
+  - Iepriekš definētas atkarības un fallback pieņēmumi.
+  - Vingrinājuma drošības robeža un rollback plāns.

@@ -32,6 +32,10 @@ Machine-readable evidence is kept in:
 
 - `data/sources.yaml` — authoritative or technically rigorous sources;
 - `data/claims.yaml` — claim-level records with source locators, jurisdiction/context, and review dates;
+- `data/proposals.yaml` — bounded project proposals with explicit normative status and non-goals;
+- `data/controls.yaml` — verifiable controls linked to proposals;
+- `data/pilots.yaml` — bounded pilot scope, prerequisites and predeclared acceptance evidence;
+- `data/reviews.yaml` — 40 proposal-specific skeptical-review findings: four proposals × ten fixed review lenses;
 - `schemas/` — JSON Schemas used by CI.
 
 A source citation does not automatically prove every statement on a page. The evidence register records what a source **defines, supports, limits, or contextualises**.
@@ -43,6 +47,7 @@ Pull requests and `main` are designed to be checked for:
 - bilingual page parity;
 - YAML/JSON Schema validity;
 - claim/source cross-reference integrity;
+- proposal/control/pilot graph integrity and complete ten-lens review coverage;
 - local-link integrity;
 - required page metadata;
 - strict MkDocs build;

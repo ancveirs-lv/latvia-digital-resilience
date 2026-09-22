@@ -35,3 +35,5 @@ Election-related content remains neutral and technical. Legal propositions are t
 Material proposals are reviewed through ten fixed skeptical lenses: legal/regulatory, system owner, architecture, SOC/CSIRT, security researcher, privacy/DPO, procurement/finance, municipal/civil protection, election-process owner, and independent auditor/public.
 
 This is a project method, not a substitute for external review. `pilot_ready` means bounded scope, machine-readable controls, acceptance criteria and explicit non-goals; it does not mean nationwide suitability or legal approval.
+
+The canonical proposal-specific skeptical-review findings are stored in `data/reviews.yaml`; CI requires exactly one finding for each of the ten lenses for every proposal.
