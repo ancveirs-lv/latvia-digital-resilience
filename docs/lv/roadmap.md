@@ -1,26 +1,27 @@
 ---
 title: Attīstības plāns
-description: Pierādījumos balstīti nākamie soļi Latvijas digitālās noturības attīstībai, nepārvēršot priekšlikumus nepamatotos mandātos.
+description: Pierādījumos balstīti nākamie soļi pēc v0.2 pilotam gatavā priekšlikumu, kontroļu un assurance modeļa.
 ---
 
 # Attīstības plāns
 
-## Publicēšanas bāze
+## Pašreizējā bāze
 
-Vispirms repozitorijam jāpaliek reproducējamam: LV/EN paritāte, pierādījumu reģistrācija, CI, avotu veselības pārbaude, Pages publicēšana un aizsargāts `main`.
+Četri ierobežoti priekšlikumi tagad ir `pilot_ready`: IKT dzīves cikla izsekojamība, CVD pilnvarojums un pierādījumi, aizstāvama ievainojamību prioritizācija un degradēta darbība/atjaunošana.
+
+`pilot_ready` nozīmē, ka ir skaidrs avotos balstīts pamats, ne-mērķi, kontroles, priekšnosacījumi, acceptance evidence un desmit skatpunktu audits. Tas **nenozīmē** juridisku apstiprinājumu, ieviešanu vai piemērotību valsts mērogam.
 
 ## Nākamie pierādījumu darbi
 
-Prioritārie izpētes virzieni:
+1. izpildīt vienu ierobežotu pilotu katram priekšlikumam un saglabāt iepriekš definētos pieņemšanas pierādījumus;
+2. pirms IKT izsekojamības iepirkuma vai ieviešanas padziļināt VIRSIS lauku līmeņa spēju kartējumu;
+3. pārbaudīt CVD programmas formulējumus pret reāliem īpašumtiesību un trešo pušu atkarību gadījumiem;
+4. veikt laikā fiksētu vēsturisku ievainojamību prioritizācijas replay un dokumentēt izņēmumus;
+5. vingrināt degradētu/manuālu darbību ar atkarību zudumu, personāla ierobežojumiem un saskaņošanu;
+6. izstrādāt izmērāmus publiskā sektora Bug Bounty kritērijus kā atsevišķu motivācijas slāni;
+7. paplašināt civilās aizsardzības spēju kartējumu un pašvaldību degradēto režīmu scenārijus;
+8. attīstīt institucionālās mācīšanās metriku, kas nošķir aizsargātu ziņošanu, sūdzību izskatīšanu, auditu un uzlabojumus.
 
-1. publiskā sektora IKT dzīves cikla izsekojamība un tas, cik lielu daļu piedāvātā pierādījumu profila jau sedz VIRSIS;
-2. precīzas Latvijas CVD pilnvarojuma un safe-harbour robežas spēkā esošajā regulējumā un CERT.LV programmu noteikumos;
-3. izmērāmi publiskā sektora Bug Bounty pilota kritēriji;
-4. ievainojamību prioritizācija ar vairākiem savstarpēji neaizvietojamiem signāliem;
-5. civilās aizsardzības sadarbspēja un degraded režīmu mācības;
-6. vēlēšanu un citu kritisku procesu darbības nepārtrauktības testēšana;
-7. institucionālās mācīšanās metrikas, kas nošķir aizsargātu ziņošanu, sūdzību izskatīšanu, auditu un uzlabojumus.
+## Paaugstināšanas noteikums
 
-## Pieņemšanas noteikums
-
-Jauns priekšlikums nonāk galvenajā atsaucē tikai tad, kad ir skaidrs tā sākuma stāvoklis, priekšlikums, robeža un validācijas metode.
+Priekšlikums drīkst pāriet tālāk par `pilot_ready` tikai ar dokumentētiem pilota rezultātiem, pieņemšanas pierādījumiem, neatrisinātiem izņēmumiem un piemērojamo juridisko, privātuma, drošības un operacionālo pārbaudi. Acceptance criteria pēc izpildes nedrīkst mainīt tikai tādēļ, lai neveiksmi pārvērstu panākumā.

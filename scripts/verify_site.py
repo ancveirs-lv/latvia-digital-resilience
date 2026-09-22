@@ -16,6 +16,9 @@ PAGES = (
     "index", "ict-governance", "cvd-security-research", "bug-bounty",
     "cyber-resilience", "civil-protection", "election-resilience",
     "institutional-accountability", "evidence-register", "methodology", "roadmap",
+    "ict-lifecycle-traceability", "cvd-authorization-framework",
+    "vulnerability-prioritisation", "degraded-operations",
+    "skeptical-review", "compliance-boundaries",
 )
 
 def base_url() -> str:

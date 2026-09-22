@@ -18,6 +18,10 @@ DOCS = ROOT / "docs"
 DATASETS = (
     (ROOT / "data/sources.yaml", ROOT / "schemas/sources.schema.json"),
     (ROOT / "data/claims.yaml", ROOT / "schemas/claims.schema.json"),
+    (ROOT / "data/proposals.yaml", ROOT / "schemas/proposals.schema.json"),
+    (ROOT / "data/controls.yaml", ROOT / "schemas/controls.schema.json"),
+    (ROOT / "data/pilots.yaml", ROOT / "schemas/pilots.schema.json"),
+    (ROOT / "data/reviews.yaml", ROOT / "schemas/reviews.schema.json"),
 )
 
 PAGES = (
@@ -32,6 +36,12 @@ PAGES = (
     "evidence-register.md",
     "methodology.md",
     "roadmap.md",
+    "ict-lifecycle-traceability.md",
+    "cvd-authorization-framework.md",
+    "vulnerability-prioritisation.md",
+    "degraded-operations.md",
+    "skeptical-review.md",
+    "compliance-boundaries.md",
 )
 
 REQUIRED_FILES = (
@@ -181,6 +191,77 @@ def validate_evidence() -> list[str]:
     return errors
 
 
+def validate_proposal_graph() -> list[str]:
+    errors=[]
+    claims=load_yaml(ROOT / "data/claims.yaml")["claims"]
+    proposals=load_yaml(ROOT / "data/proposals.yaml")["proposals"]
+    controls=load_yaml(ROOT / "data/controls.yaml")["controls"]
+    pilots=load_yaml(ROOT / "data/pilots.yaml")["pilots"]
+    claim_ids={x["id"] for x in claims}; proposal_ids={x["id"] for x in proposals}; control_ids={x["id"] for x in controls}; pilot_ids={x["id"] for x in pilots}
+    control_map={x["id"]:x for x in controls}; pilot_map={x["id"]:x for x in pilots}
+    for label,items in (("proposal",proposals),("control",controls),("pilot",pilots)):
+        ids=[x["id"] for x in items]
+        if len(ids)!=len(set(ids)): errors.append(f"duplicate {label} id")
+    for p in proposals:
+        if set(p["claim_ids"])-claim_ids: errors.append(f"proposal {p['id']} has unknown claims")
+        if set(p["control_ids"])-control_ids: errors.append(f"proposal {p['id']} has unknown controls")
+        if p["pilot_id"] not in pilot_ids: errors.append(f"proposal {p['id']} has unknown pilot")
+        owned={c["id"] for c in controls if c["proposal_id"]==p["id"]}
+        if set(p["control_ids"])!=owned: errors.append(f"proposal {p['id']} control list mismatch")
+    for c in controls:
+        if c["proposal_id"] not in proposal_ids: errors.append(f"control {c['id']} has unknown proposal")
+    for pilot in pilots:
+        if pilot["proposal_id"] not in proposal_ids: errors.append(f"pilot {pilot['id']} has unknown proposal")
+        for cid in pilot["control_ids"]:
+            if cid not in control_map or control_map[cid]["proposal_id"]!=pilot["proposal_id"]: errors.append(f"pilot/control mismatch {pilot['id']} -> {cid}")
+    for p in proposals:
+        pilot=pilot_map.get(p["pilot_id"])
+        if pilot and pilot["proposal_id"]!=p["id"]: errors.append(f"proposal/pilot mismatch {p['id']}")
+    return errors
+
+
+REVIEW_LENSES = {
+    "legal_regulatory", "system_owner", "architecture", "soc_csirt",
+    "security_researcher", "privacy_dpo", "procurement_finance",
+    "municipal_civil_protection", "election_process_owner",
+    "independent_auditor_public",
+}
+
+def validate_review_matrix() -> list[str]:
+    errors = []
+    proposals = load_yaml(ROOT / "data/proposals.yaml")["proposals"]
+    pilots = load_yaml(ROOT / "data/pilots.yaml")["pilots"]
+    reviews = load_yaml(ROOT / "data/reviews.yaml")["reviews"]
+    proposal_ids = {p["id"] for p in proposals}
+
+    ids = [r["id"] for r in reviews]
+    if len(ids) != len(set(ids)):
+        errors.append("duplicate review id")
+
+    keys = [(r["proposal_id"], r["lens"]) for r in reviews]
+    if len(keys) != len(set(keys)):
+        errors.append("duplicate proposal/lens review")
+
+    for review in reviews:
+        if review["proposal_id"] not in proposal_ids:
+            errors.append(f"review {review['id']} references unknown proposal")
+
+    for proposal in proposals:
+        actual = {r["lens"] for r in reviews if r["proposal_id"] == proposal["id"]}
+        if actual != REVIEW_LENSES:
+            errors.append(f"proposal {proposal['id']} does not have the canonical ten-lens review set")
+        if set(proposal["review_lenses"]) != REVIEW_LENSES:
+            errors.append(f"proposal {proposal['id']} declared review lenses differ from canonical set")
+
+    criteria = [c["id"] for p in pilots for c in p["acceptance_criteria"]]
+    if len(criteria) != len(set(criteria)):
+        errors.append("duplicate acceptance-criterion id")
+
+    for pilot in pilots:
+        if len(pilot["prerequisites_en"]) != len(pilot["prerequisites_lv"]):
+            errors.append(f"pilot {pilot['id']} prerequisite language counts differ")
+    return errors
+
 def markdown_files() -> list[Path]:
     return sorted(list(ROOT.glob("*.md")) + list(DOCS.rglob("*.md")))
 
@@ -235,6 +316,8 @@ def run_all() -> list[str]:
     errors.extend(validate_language_pairs())
     errors.extend(validate_page_metadata())
     errors.extend(validate_evidence())
+    errors.extend(validate_proposal_graph())
+    errors.extend(validate_review_matrix())
     errors.extend(validate_local_links())
     errors.extend(validate_repository_configuration())
     return errors
@@ -250,9 +333,14 @@ def main() -> int:
 
     sources = len(load_yaml(ROOT / "data/sources.yaml")["sources"])
     claims = len(load_yaml(ROOT / "data/claims.yaml")["claims"])
+    proposals = len(load_yaml(ROOT / "data/proposals.yaml")["proposals"])
+    controls = len(load_yaml(ROOT / "data/controls.yaml")["controls"])
+    pilots = len(load_yaml(ROOT / "data/pilots.yaml")["pilots"])
+    reviews = len(load_yaml(ROOT / "data/reviews.yaml")["reviews"])
     print(
         f"Validation passed: {sources} sources, {claims} evidence claims, "
-        f"{len(PAGES)} bilingual document pairs."
+        f"{proposals} proposals, {controls} controls, {pilots} pilots, "
+        f"{reviews} skeptical-review findings, {len(PAGES)} bilingual document pairs."
     )
     return 0
 

@@ -1,26 +1,27 @@
 ---
 title: Roadmap
-description: Evidence-driven next steps for developing Latvia Digital Resilience without turning proposals into unsupported mandates.
+description: Evidence-driven next steps after the pilot-ready v0.2 proposal, control and assurance model.
 ---
 
 # Roadmap
 
-## Publication baseline
+## Current baseline
 
-The repository first needs to remain reproducible: bilingual parity, evidence registration, CI, source health, Pages deployment and protected `main`.
+Four bounded proposals are now `pilot_ready`: ICT lifecycle traceability, CVD authorization and evidence, defensible vulnerability prioritisation, and degraded operations/recovery.
+
+`pilot_ready` means the source-backed baseline, non-goals, controls, prerequisites, acceptance evidence and ten-lens review are explicit. It does **not** mean legal approval, deployment or nationwide suitability.
 
 ## Next evidence work
 
-Priority research areas:
+1. run one bounded pilot for each proposal and preserve predeclared acceptance evidence;
+2. deepen VIRSIS field-level capability mapping before ICT traceability procurement or implementation;
+3. test CVD programme language against real ownership and third-party dependency cases;
+4. run time-frozen historical vulnerability-prioritisation replay and document overrides;
+5. exercise degraded/manual operation with dependency loss, staff constraints and reconciliation;
+6. design measurable public-sector Bug Bounty criteria as a separate incentive layer;
+7. extend civil-protection capability mapping and municipal degraded-mode scenarios;
+8. develop institutional-learning metrics that distinguish protected reporting, grievance handling, audit and improvement.
 
-1. public-sector ICT lifecycle traceability and how far existing VIRSIS fields already cover the proposed evidence profile;
-2. precise Latvian CVD authorization and safe-harbour boundaries under current law and CERT.LV programme terms;
-3. measurable public-sector Bug Bounty pilot criteria;
-4. vulnerability prioritisation using multiple non-equivalent signals;
-5. civil-protection interoperability and degraded-mode exercises;
-6. election and other critical-process continuity testing;
-7. institutional learning metrics that distinguish protected reporting, grievance handling, audit and improvement.
+## Promotion rule
 
-## Acceptance rule
-
-A new proposal enters the main reference only when its baseline, recommendation, boundary and validation method are explicit.
+A proposal moves beyond `pilot_ready` only with documented pilot outcomes, acceptance evidence, unresolved exceptions and applicable legal, privacy, security and operational review. Acceptance criteria must not be changed after execution merely to convert failure into success.

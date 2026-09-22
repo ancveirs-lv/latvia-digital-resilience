@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ancveirs-lv/latvia-digital-resilience/main/schemas/reviews.schema.json",
+  "type": "object",
+  "required": ["schema_version", "reviews"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": 1},
+    "reviews": {
+      "type": "array",
+      "minItems": 40,
+      "items": {
+        "type": "object",
+        "required": ["id", "proposal_id", "lens", "disposition", "objection_en", "objection_lv", "recommendation_en", "recommendation_lv"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "proposal_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "lens": {"enum": ["legal_regulatory", "system_owner", "architecture", "soc_csirt", "security_researcher", "privacy_dpo", "procurement_finance", "municipal_civil_protection", "election_process_owner", "independent_auditor_public"]},
+          "disposition": {"enum": ["accepted", "mitigated", "pilot_condition", "deferred"]},
+          "objection_en": {"type": "string", "minLength": 20},
+          "objection_lv": {"type": "string", "minLength": 20},
+          "recommendation_en": {"type": "string", "minLength": 20},
+          "recommendation_lv": {"type": "string", "minLength": 20}
+        }
+      }
+    }
+  }
+}

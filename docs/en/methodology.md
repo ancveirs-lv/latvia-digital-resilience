@@ -29,3 +29,11 @@ A `project_recommendation` does not become law, official policy, or institutiona
 Every evidence record carries a review date. Material changes require source review, bilingual parity, local validation, tests, and a strict site build.
 
 Election-related content remains neutral and technical. Legal propositions are tied to jurisdiction and source text. Operational security detail is minimised.
+
+## Ten-lens adversarial review
+
+Material proposals are reviewed through ten fixed skeptical lenses: legal/regulatory, system owner, architecture, SOC/CSIRT, security researcher, privacy/DPO, procurement/finance, municipal/civil protection, election-process owner, and independent auditor/public.
+
+This is a project method, not a substitute for external review. `pilot_ready` means bounded scope, machine-readable controls, acceptance criteria and explicit non-goals; it does not mean nationwide suitability or legal approval.
+
+The canonical proposal-specific skeptical-review findings are stored in `data/reviews.yaml`; CI requires exactly one finding for each of the ten lenses for every proposal.

@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — v0.2.0 candidate
+
+- four pilot-ready resilience modules;
+- machine-readable proposals, controls and pilots;
+- ten-lens skeptical review and compliance boundary crosswalk;
+- expanded source-backed evidence and graph validation.
+
 ## 0.1.0 — 2026-09-22
 
 Enterprise-publication baseline:
