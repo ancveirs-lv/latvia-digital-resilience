@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this reference, please cite it as follows."
 title: "Latvia Digital Resilience"
 type: dataset
-version: 0.1.0
+version: 0.2.0
 date-released: 2026-09-22
 authors:
   - family-names: Ancveirs
